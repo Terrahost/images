@@ -35,7 +35,7 @@ RUN	wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks
  && useradd -m -d /home/container container
 
  # Winetricks Install DotNet 4.6.1 requires by Space Engineers
- RUN winetricks --unattended dotnet461 dotnet_verifier
+ RUN winetricks --unattended dotnet461
 
 USER container
 
