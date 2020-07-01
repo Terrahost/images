@@ -34,7 +34,7 @@ RUN	wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks
  && locale-gen \
  && useradd -m -d /home/container container
 
- # Winetricks Install DotNet 4.6.1 and dotnet verifier required by Space Engineers
+ # Winetricks Install .Net 4.7.2 required by Space Engineers
  RUN winetricks --unattended dotnet472 vcrun2013 vcrun2017 dotnet_verifier
 
 USER container
