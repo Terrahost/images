@@ -34,6 +34,9 @@ RUN	wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks
  && locale-gen \
  && useradd -m -d /home/container container
 
+# Install DX9
+RUN winetricks -q d3dx9
+
 USER container
 
 ENV HOME=/home/container
