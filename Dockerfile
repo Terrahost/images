@@ -17,9 +17,9 @@ RUN         dpkg --add-architecture i386 \
             && useradd -m -d /home/container container
 
 # Work around for out-of-date SSL library
-RUN         cd /usr/lib/x86_64-linux-gnu/ && \
-	        ln -s libssl.so.1.1 libssl.so.1.0.0 && \
-	        ln -s libcrypto.so.1.1 libcrypto.so.1.0.0
+#RUN         cd /usr/lib/x86_64-linux-gnu/ && \
+#	        ln -s libssl.so.1.1 libssl.so.1.0.0 && \
+#	        ln -s libcrypto.so.1.1 libcrypto.so.1.0.0
 
 USER        container
 ENV         HOME /home/container
