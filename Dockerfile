@@ -1,6 +1,6 @@
 # ----------------------------------
 # Generic Wine image w/ steamcmd support
-# Environment: Debian 10 Buster + Wine 5.0
+# Environment: Debian 10 Buster + Wine 5.1x Development
 # Minimum Panel Version: 0.7.15
 # ----------------------------------
 FROM debian:buster-slim
@@ -16,13 +16,13 @@ RUN dpkg --add-architecture i386 \
 
 RUN apt install -y --no-install-recommends gnupg2 wget curl software-properties-common
 
-# Install winehq-stable and  with recommends
+# Install winehq-devel and  with recommends
 RUN wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 RUN apt-add-repository https://dl.winehq.org/wine-builds/debian/
 RUN wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/Release.key | apt-key add -    
 RUN echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10 ./" | tee /etc/apt/sources.list.d/wine-obs.list
 RUN apt-get update
-RUN apt install -y --install-recommends winehq-stable
+RUN apt install -y --install-recommends winehq-devel
 
 # Install other packages
 RUN apt install -y --no-install-recommends iproute2 cabextract lib32gcc1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
