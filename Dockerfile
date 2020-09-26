@@ -4,7 +4,7 @@
 # ----------------------------------
 FROM        debian:buster-slim
 
-LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
+LABEL       author="Terrahost" maintainer="opensource@terrhost.cloud"
 
 ENV         DEBIAN_FRONTEND noninteractive
 
