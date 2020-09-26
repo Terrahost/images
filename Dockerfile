@@ -5,7 +5,7 @@
 # ----------------------------------
 FROM        ubuntu:20.04
 
-LABEL       author="Pterodactyl Software" maintainer="support@pterodactyl.io"
+LABEL       author="Terrahost" maintainer="support@terrahost.cloud"
 
 ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
