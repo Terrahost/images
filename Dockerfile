@@ -19,7 +19,7 @@ RUN apt install -y --no-install-recommends gnupg2 wget curl software-properties-
 # Install winehq-devel and  with recommends
 RUN wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 RUN apt-add-repository https://dl.winehq.org/wine-builds/debian/
-RUN wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/Release.key | apt-key add -    
+RUN wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/Release.key | APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1 apt-key add -
 RUN echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10 ./" | tee /etc/apt/sources.list.d/wine-obs.list
 RUN apt-get update
 RUN apt install -y --install-recommends winehq-devel
