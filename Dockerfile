@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 \
  && apt update \
  && apt upgrade -y
 
-RUN apt install -y --no-install-recommends gnupg2 wget curl software-properties-common
+RUN apt install -y --no-install-recommends gnupg2 wget curl software-properties-common iproute2 cabextract lib32gcc1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
 
 # Install winehq-stable and  with recommends
 RUN wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
@@ -40,7 +40,7 @@ RUN winetricks --unattended vcrun2015
 RUN winetricks --unattended dotnet462
 RUN winetricks --unattended dotnet_verifier
 
-
+# Install other packages
 
 USER container
 
