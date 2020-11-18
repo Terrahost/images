@@ -22,7 +22,7 @@ RUN apt-add-repository https://dl.winehq.org/wine-builds/debian/
 RUN wget -O- -q https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/Release.key | apt-key add -    
 RUN echo "deb http://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10 ./" | tee /etc/apt/sources.list.d/wine-obs.list
 RUN apt-get update
-RUN apt install -y --install-recommends winehq-stable
+RUN apt install -y --install-recommends winehq-devel
 
 # Install other packages
 RUN apt install -y --no-install-recommends iproute2 cabextract lib32gcc1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
