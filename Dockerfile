@@ -1,6 +1,6 @@
 # ----------------------------------
 # Generic Wine image w/ steamcmd support
-# Environment: Debian 10 Buster + Wine 5.0
+# Environment: Debian 11 Bullseye + Wine 6.x
 # Minimum Panel Version: 0.7.15
 # ----------------------------------
 FROM debian:bullseye-slim
@@ -24,7 +24,7 @@ RUN apt-get update
 RUN apt install -y --install-recommends winehq-stable
 
 # Install other packages
-RUN apt install -y --no-install-recommends iproute2 cabextract lib32gcc1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
+RUN apt install -y --no-install-recommends iproute2 cabextract libgcc-s1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
 
 # Do misc stuff
 RUN	wget -q -O /usr/sbin/winetricks https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
