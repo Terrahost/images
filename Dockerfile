@@ -1,6 +1,6 @@
 # ----------------------------------
 # Generic Wine image w/ steamcmd support
-# Environment: Debian 10 Buster + Wine 5.0
+# Environment: Debian 11 Bullseye + Wine 6.x
 # Minimum Panel Version: 0.7.15
 # ----------------------------------
 FROM debian:bullseye-slim
@@ -21,7 +21,7 @@ RUN wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 RUN add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
 RUN echo "deb https://dl.winehq.org/wine-builds/debian/ buster main" | tee /etc/apt/sources.list.d/wine-obs.list
 RUN apt-get update
-RUN apt install -y --install-recommends winehq-stable
+RUN apt install -y --install-recommends winehq-devel
 
 # Install other packages
 RUN apt install -y --no-install-recommends iproute2 cabextract lib32gcc1 libntlm0 ca-certificates winbind xvfb tzdata locales xauth
