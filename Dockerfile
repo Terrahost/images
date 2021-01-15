@@ -3,7 +3,7 @@
 # Environment: Debian 10 Buster + Wine 5.0
 # Minimum Panel Version: 0.7.15
 # ----------------------------------
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 LABEL author="Terrahost" maintainer="opensource@terrahost.cloud"
 
