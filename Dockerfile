@@ -17,7 +17,7 @@ RUN     apt update -y \
 
 
 USER    container
-ENV     USER=container HOME=/home/container
+ENV     USER=container HOME=/home/container DOTNET_BUNDLE_EXTRACT_BASE_DIR=/home/container/.net
 WORKDIR /home/container
 
 COPY    ./entrypoint.sh /entrypoint.sh
